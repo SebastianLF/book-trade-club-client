@@ -17,8 +17,12 @@ class TradeList extends React.Component {
   }
 
   render () {
-    return (<div className="row">
-      
+    return (<div>
+      { this.props.tradelist.map( (book, i) =>
+        {
+              <Book {...book}/>
+        })
+      }
     </div>)
   }
 }
