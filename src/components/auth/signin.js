@@ -27,7 +27,7 @@ class Signin extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col-md-6">
-            <h1 className="display-4 m-b-2 m-t-3"><i className="fa fa-sign-in" aria-hidden="true"></i> Sign In</h1>
+            <h1 className="m-b-2 m-t-3"><i className="fa fa-sign-in" aria-hidden="true"></i> Sign In</h1>
         <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
           <fieldset className="form-group">
             <input {...email}  className="form-control form-control-lg" placeholder="Email"/>

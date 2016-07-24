@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router'
-import { AUTH_USER, AUTH_ERROR, UNAUTH_USER } from './types'
+import { GET_TRADE_LIST, AUTH_USER, AUTH_ERROR, UNAUTH_USER } from './types'
 
 const ROOT_URL = 'http://localhost:3000';
 
@@ -62,4 +62,13 @@ export function signOutUser(){
   browserHistory.push('/');
   return { type: UNAUTH_USER }
 
+}
+
+export function getTradeList(){
+  return function(dispatch){
+    axios.get('https://www.googleapis.com/books/v1/volumes?q=javascript')
+      .then( (response) => {
+        dispatch({ type: GET_TRADE_LIST, payload: response.data.items})
+      });
+  }
 }

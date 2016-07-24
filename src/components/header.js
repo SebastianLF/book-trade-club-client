@@ -12,9 +12,7 @@ class Header extends React.Component {
   renderLinks(){
     if (this.props.authenticated) {
       return <ul className="nav navbar-nav pull-xs-right">
-        <li className="nav-item">
-          <a className="nav-link" href="#">All books</a>
-        </li>
+
         <li className="nav-item">
           <Link to="/mybooks" className="nav-link">My books</Link>
         </li>
@@ -25,12 +23,15 @@ class Header extends React.Component {
           <div className="dropdown-menu" aria-labelledby="Preview">
           <Link to="/settings" className="dropdown-item"><i className="fa fa-cog"></i> Settings</Link>
             <div className="dropdown-divider"></div>
-          <a onClick={this.handleSignOutClick.bind(this)} href="#" className="dropdown-item"><i className="fa fa-sign-out"></i> Sign out</a>
+          <a onClick={this.handleSignOutClick.bind(this)} href="#" className="dropdown-item "><i className="fa fa-sign-out"></i> Sign out</a>
           </div>
         </li>
       </ul>
     } else {
       return <ul className="nav navbar-nav pull-xs-right">
+        <li className="nav-item">
+          <Link className="nav-link" to="/allbooks">Books</Link>
+        </li>
         <li className="nav-item">
           <Link to="/signin" className="nav-link">Sign in</Link>
         </li>
@@ -44,12 +45,12 @@ class Header extends React.Component {
   render () {
     return (
       <div className="container p-y-2">
-        <nav className="navbar navbar-light">
+        <nav className="navbar navbar-light ">
           <button className="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header">
             ☰
           </button>
+          <Link to="/" className="navbar-brand text-uppercase">Book trading club</Link>
           <div className="collapse navbar-toggleable-xs" id="navbar-header">
-            <Link to="/" className="navbar-brand">TBC</Link>
             { this.renderLinks() }
           </div>
         </nav>

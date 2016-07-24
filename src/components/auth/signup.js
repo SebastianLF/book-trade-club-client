@@ -14,7 +14,7 @@ class Signup extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-6">
-        <h1 className="display-4 m-b-2 m-t-3"><i className="fa fa-user-plus" aria-hidden="true"></i> Sign Up</h1>
+        <h1 className="m-b-2 m-t-3"><i className="fa fa-user-plus" aria-hidden="true"></i> Sign Up</h1>
 
         <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
           <fieldset className="form-group">
